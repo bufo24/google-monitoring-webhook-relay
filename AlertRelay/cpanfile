@@ -1,0 +1,15 @@
+recommends  'perl', '5.2';
+
+requires "Dancer2" => "0.300000";
+requires 'LWP::UserAgent', '6.31';
+requires 'JSON::XS', '3.04';
+
+recommends "YAML"             => "0";
+recommends "URL::Encode::XS"  => "0";
+recommends "CGI::Deurl::XS"   => "0";
+recommends "HTTP::Parser::XS" => "0";
+
+on "test" => sub {
+    requires "Test::More"            => "0";
+    requires "HTTP::Request::Common" => "0";
+};

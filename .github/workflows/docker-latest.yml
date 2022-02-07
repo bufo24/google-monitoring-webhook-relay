@@ -1,0 +1,131 @@
+name: "Latest Docker images"
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+
+  test:
+    name: Test (again)
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Install dependencies 🔧
+        run: |
+          sudo apt-get install  \
+            libwww-perl         \
+            libdancer2-perl     \
+            starman
+        
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+
+      # Test
+      - name: Test 📏
+        run: cd AlertRelay && bash t/test.sh
+
+  docker:
+    name: Build Docker image
+    runs-on: ubuntu-latest
+    needs: [test]
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Buildx 🔧
+        uses: docker/setup-buildx-action@v1
+
+      - name: Cache Docker layers 💾
+        uses: actions/cache@v2
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-buildx-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-buildx-
+
+      - name: Login to GitHub Container registry 🏭
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push image 🧪
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ghcr.io/cyclenerd/google-monitoring-webhook-relay:test
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
+
+      # Temp fix
+      # https://github.com/docker/build-push-action/issues/252
+      # https://github.com/moby/buildkit/issues/1896
+      - name: Move cache
+        run: |
+          rm -rf /tmp/.buildx-cache
+          mv /tmp/.buildx-cache-new /tmp/.buildx-cache
+
+  docker-test:
+    name: Test Docker image
+    needs: [docker]
+    runs-on: ubuntu-latest
+    services: # Define Docker containers to use for this job.
+      http-server: # Container ID for our notify-me container
+        image: ghcr.io/cyclenerd/google-monitoring-webhook-relay:test # Image to pull from GitHub Container registry
+        env:
+          API_KEY: foo
+        ports:
+          - 8080:8080 # TCP port to expose on Docker container and host environment 
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+      # Run test
+      - name: Test version 📏
+        run: |
+          curl -i http://localhost:8080/?key=foo
+      # Message
+      - name: Send test message 📤
+        run: |
+          curl -i \
+            -H "Content-Type: application/json" \
+            --data @http/AlertRelay/t/test.json \
+            http://localhost:8080/test?key=foo
+
+  github-registry-latest:
+    name: Push image to GitHub
+    runs-on: ubuntu-latest
+    needs: [docker-test]
+    steps:
+      - name: Login to GitHub Container registry 🏭
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Pull latest test image from GitHub container registry 📦
+        run: docker pull ghcr.io/cyclenerd/google-monitoring-webhook-relay:test
+      - name: Push image to GitHub container registry as latest version 🚢
+        run: |
+          docker tag ghcr.io/cyclenerd/google-monitoring-webhook-relay:test ghcr.io/cyclenerd/google-monitoring-webhook-relay:latest
+          docker push ghcr.io/cyclenerd/google-monitoring-webhook-relay:latest
+
+  docker-hub-latest:
+    name: Push image to Docker Hub
+    runs-on: ubuntu-latest
+    needs: [docker-test]
+    steps:
+      - name: Login to Docker Hub registry 🏭
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
+          password: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
+      - name: Pull latest test image from GitHub container registry 📦
+        run: docker pull ghcr.io/cyclenerd/google-monitoring-webhook-relay:test
+      - name: Push image to Docker Hub registry as latest version 🚢
+        run: |
+          docker tag ghcr.io/cyclenerd/google-monitoring-webhook-relay:test cyclenerd/google-monitoring-webhook-relay:latest
+          docker push cyclenerd/google-monitoring-webhook-relay:latest

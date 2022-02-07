@@ -1,0 +1,28 @@
+name: "Ubuntu 20.04 LTS"
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  ubuntu-2004:
+    name: Test Ubuntu 20.04 LTS
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Install dependencies 🔧
+        run: |
+          sudo apt-get install  \
+            libwww-perl         \
+            libdancer2-perl     \
+            starman
+        
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+
+      # Test
+      - name: Test 📏
+        run: cd AlertRelay && bash t/test.sh

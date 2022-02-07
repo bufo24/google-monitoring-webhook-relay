@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# Relay
+export API_KEY="$(echo $RANDOM | md5sum | head -c 20)"
+
+# Discord
+export DISCORD_URL=''
+
+# Pushover
+export PUSHOVER_USER=''
+export PUSHOVER_TOKEN=''
+
+# Sipgate SMS
+export SIPGATE_ID=''
+export SIPGATE_TOKEN=''
+export SIPGATE_SMS=''
+export SIPGATE_TEL=''
+
+# Microsoft Teams
+export TEAMS_URL=''
