@@ -11,10 +11,10 @@ Based on [Dancer](https://www.perldancer.org/) Perl web framework.
 
 ## Services supported
 
-* 👾 [Discord](https://github.com/Cyclenerd/google-monitoring-webhook-relay#discord--discordpl)
-* 🔔 [Pushover](https://github.com/Cyclenerd/google-monitoring-webhook-relay#pushover--pushoverpl)
-* ☎️ [sipgate SMS](https://github.com/Cyclenerd/google-monitoring-webhook-relay#sipgate-sms--sipgatepl)
-* 👪 [Microsoft Teams](https://github.com/Cyclenerd/google-monitoring-webhook-relay#microsoft-teams--ms-teamspl)
+* 👾 [Discord](https://github.com/Cyclenerd/google-monitoring-webhook-relay#discord)
+* 🔔 [Pushover](https://github.com/Cyclenerd/google-monitoring-webhook-relay#pushover)
+* ☎️ [sipgate SMS](https://github.com/Cyclenerd/google-monitoring-webhook-relay#sipgate-sms)
+* 👪 [Microsoft Teams](https://github.com/Cyclenerd/google-monitoring-webhook-relay#microsoft-teams)
 
 
 ## Configuration
