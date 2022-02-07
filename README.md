@@ -16,6 +16,11 @@ Based on [Dancer](https://www.perldancer.org/) Perl web framework.
 * ☎️ [sipgate SMS](https://github.com/Cyclenerd/google-monitoring-webhook-relay#sipgate-sms)
 * 👪 [Microsoft Teams](https://github.com/Cyclenerd/google-monitoring-webhook-relay#microsoft-teams)
 
+## Tested
+
+* [![Ubuntu 20.04 LTS](https://github.com/Cyclenerd/google-monitoring-webhook-relay/actions/workflows/ubuntu_2004.yml/badge.svg)](https://github.com/Cyclenerd/google-monitoring-webhook-relay/actions/workflows/ubuntu_2004.yml)
+* [![Latest Docker images](https://github.com/Cyclenerd/google-monitoring-webhook-relay/actions/workflows/docker-latest.yml/badge.svg)](https://github.com/Cyclenerd/google-monitoring-webhook-relay/actions/workflows/docker-latest.yml)
+
 
 ## Configuration
 
