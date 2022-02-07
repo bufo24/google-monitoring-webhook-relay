@@ -3,6 +3,8 @@ name: "Latest Docker images"
 on:
   push:
     branches: [ master ]
+  schedule:
+    - cron: '23 4 15 * *' # At 04:23 on day-of-month 15.
 
 jobs:
 
