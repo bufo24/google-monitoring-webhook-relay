@@ -86,13 +86,13 @@ jobs:
       # Run test
       - name: Test version 📏
         run: |
-          curl -i http://localhost:8080/?key=foo
+          curl --fail -i http://localhost:8080/?key=foo
       # Message
       - name: Send test message 📤
         run: |
-          curl -i \
+          curl --fail -i \
             -H "Content-Type: application/json" \
-            --data @http/AlertRelay/t/test.json \
+            --data @AlertRelay/t/test.json \
             http://localhost:8080/test?key=foo
 
   github-registry-latest:

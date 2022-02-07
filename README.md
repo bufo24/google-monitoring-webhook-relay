@@ -55,7 +55,7 @@ Example:
 curl -i \
 	-H "Content-Type: application/json" \
 	--data @t/test.json \
-	http://localhost:8080/discord?key=$API_KEY
+	"http://localhost:8080/discord?key=$API_KEY"
 ```
 
 ### Pushover
@@ -74,7 +74,7 @@ Example:
 curl -i \
 	-H "Content-Type: application/json" \
 	--data @t/test.json \
-	http://localhost:8080/pushover?key=$API_KEY
+	"http://localhost:8080/pushover?key=$API_KEY"
 ```
 
 ### Sipgate SMS
@@ -98,7 +98,7 @@ Example:
 curl -i \
 	-H "Content-Type: application/json" \
 	--data @t/test.json \
-	http://localhost:8080/sipgate?key=$API_KEY
+	"http://localhost:8080/sipgate?key=$API_KEY"
 ```
 
 
@@ -127,7 +127,7 @@ Example:
 curl -i \
 	-H "Content-Type: application/json" \
 	--data @t/test.json \
-	http://localhost:8080/teams?key=$API_KEY
+	"http://localhost:8080/teams?key=$API_KEY"
 ```
 
 
@@ -172,7 +172,7 @@ bash start-development-server.sh
 
 First test:
 ```shell
-curl -i http://localhost:8080/?key=$API_KEY
+curl -i "http://localhost:8080/?key=$API_KEY"
 ```
 
 Test JSON:
@@ -180,7 +180,7 @@ Test JSON:
 curl -i \
 	-H "Content-Type: application/json" \
 	--data @t/test.json \
-	http://localhost:8080/test?key=$API_KEY
+	"http://localhost:8080/test?key=$API_KEY"
 ```
 
 
