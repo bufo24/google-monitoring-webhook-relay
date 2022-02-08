@@ -2,6 +2,8 @@
 
 Get notified via Discord, Pushover, Sipgate SMS and Microsoft Teams message.
 
+![Image: Diagram](img/google-monitoring-webhook-relay.png)
+
 Available as [Docker image](https://hub.docker.com/repository/docker/cyclenerd/google-monitoring-webhook-relay) for hosting using Kubernets, AWS, Azure or [Google Cloud Platform](https://github.com/Cyclenerd/google-monitoring-webhook-relay/tree/master/gcp_cloud_run).
 
 Based on [Dancer](https://www.perldancer.org/) Perl web framework.
