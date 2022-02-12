@@ -1,9 +1,16 @@
-# Google Cloud Run
+# How to set up Google Cloud Run
 
-Deploy the [Docker image](https://hub.docker.com/repository/docker/cyclenerd/google-monitoring-webhook-relay) as highly scalable containerized applications on a fully managed serverless platform.
+Deploy the Google Cloud Monitoring Alerting Webhook Relay [Docker image](https://hub.docker.com/repository/docker/cyclenerd/google-monitoring-webhook-relay) as highly scalable containerized applications on a fully managed serverless platform.
 
 You can use the service to get notified about Google Cloud Platform Monitoring alerts.
 Add the HTTP API URL as a webhook endpoint for this task.
+
+## Start the interactive tutorial
+
+This guide is available as an interactive Cloud Shell tutorial.
+To get started, please click the following button:
+
+[![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.png)](https://shell.cloud.google.com/cloudshell/open?cloudshell_git_repo=https://github.com/Cyclenerd/google-monitoring-webhook-relay&cloudshell_git_branch=master&cloudshell_tutorial=gcp_cloud_run/cloud-shell-tutorial.md)
 
 ## Setup
 
