@@ -12,50 +12,50 @@ Click the **Start** button to move to the next step.
 
 Change to `gcp_cloud_run` directory:
 
-```shell
+```bash
 cd gcp_cloud_run/
 ```
 
 View default configuration:
-```shell
+```bash
 cat default_config
 ```
 
 **Overwrite default configuration with `my_config` file**
 
 Change API key:
-```shell
+```bash
 echo "API_KEY='$(echo $RANDOM | md5sum | head -c 20)'" >> my_config
 ```
 
 Change project ID:
-```shell
+```bash
 echo "MY_GCP_PROJECT='my-project-id'" >> my_config
 ```
 
 Change region:
-```shell
+```bash
 echo "MY_GCP_REGION='europe-north1'" >> my_config
 ```
 
 Pass other configuration options as [environment variables](https://github.com/Cyclenerd/google-monitoring-webhook-relay#configuration) to Cloud Run container service:
 
 Example for Discord webhook url parameter:
-```shell
+```bash
 echo "DISCORD_URL='https://discord.com/api/webhooks/123456789/abcdefghijklmnopqrstuvwxyz'" >> my_config
 ```
 
 ## Create Artifact Registry 
 
 Create a new Artifact Registry repository for Docker images:
-```shell
+```bash
 bash 01_create_docker_registry.sh
 ```
 
 ## Copy Docker image
 
 Copy Docker image from GitHub Container Registry to Artifact Registry:
-```shell
+```bash
 bash 02_copy_docker_image.sh
 ```
 
@@ -67,7 +67,7 @@ If you don't have it installed, the script will try to install it under `/usr/lo
 ## Deploy Cloud Run service
 
 Deploy container to Cloud Run service and test HTTP API:
-```shell
+```bash
 bash 03_deploy_cloud_run.sh
 ```
 
@@ -78,7 +78,7 @@ bash 03_deploy_cloud_run.sh
 You can now use the HTTP API to get notified.
 
 Test:
-```shell
+```bash
 curl -i \
   -H "Content-Type: application/json" \
   --data @../AlertRelay/t/test.json \
