@@ -8,8 +8,10 @@ Available as [Docker image](https://hub.docker.com/repository/docker/cyclenerd/g
 
 Based on [Dancer](https://www.perldancer.org/) Perl web framework.
 
-[![Run on Google Cloud](https://deploy.cloud.run/button.svg)](https://github.com/Cyclenerd/google-monitoring-webhook-relay/tree/master/gcp_cloud_run)
-
+[![Ubuntu 20.04 LTS](https://github.com/Cyclenerd/google-monitoring-webhook-relay/actions/workflows/ubuntu_2004.yml/badge.svg)](https://github.com/Cyclenerd/google-monitoring-webhook-relay/actions/workflows/ubuntu_2004.yml)
+[![Latest Docker images](https://github.com/Cyclenerd/google-monitoring-webhook-relay/actions/workflows/docker-latest.yml/badge.svg)](https://github.com/Cyclenerd/google-monitoring-webhook-relay/actions/workflows/docker-latest.yml)
+[![Docker Pulls](https://img.shields.io/docker/pulls/cyclenerd/google-monitoring-webhook-relay)](https://hub.docker.com/r/cyclenerd/google-monitoring-webhook-relay)
+[![GitHub](https://img.shields.io/github/license/cyclenerd/google-monitoring-webhook-relay)](https://github.com/Cyclenerd/google-monitoring-webhook-relay/blob/master/LICENSE)
 
 ## Services supported
 
@@ -18,11 +20,9 @@ Based on [Dancer](https://www.perldancer.org/) Perl web framework.
 * ☎️ [sipgate SMS](https://github.com/Cyclenerd/google-monitoring-webhook-relay#sipgate-sms)
 * 👪 [Microsoft Teams](https://github.com/Cyclenerd/google-monitoring-webhook-relay#microsoft-teams)
 
-## Tested
+## Google Cloud Run
 
-* [![Ubuntu 20.04 LTS](https://github.com/Cyclenerd/google-monitoring-webhook-relay/actions/workflows/ubuntu_2004.yml/badge.svg)](https://github.com/Cyclenerd/google-monitoring-webhook-relay/actions/workflows/ubuntu_2004.yml)
-* [![Latest Docker images](https://github.com/Cyclenerd/google-monitoring-webhook-relay/actions/workflows/docker-latest.yml/badge.svg)](https://github.com/Cyclenerd/google-monitoring-webhook-relay/actions/workflows/docker-latest.yml)
-
+[![Run on Google Cloud](https://deploy.cloud.run/button.svg)](https://github.com/Cyclenerd/google-monitoring-webhook-relay/tree/master/gcp_cloud_run)
 
 ## Configuration
 
