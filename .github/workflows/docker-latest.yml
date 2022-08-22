@@ -150,3 +150,13 @@ jobs:
         run: |
           docker tag ghcr.io/cyclenerd/google-monitoring-webhook-relay:test cyclenerd/google-monitoring-webhook-relay:latest
           docker push cyclenerd/google-monitoring-webhook-relay:latest
+
+  readme:
+    name: Update README
+    runs-on: ubuntu-latest
+    needs: [docker-hub-latest, github-registry-latest]
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+      - name: Update 📰
+        run: bash readme.sh
