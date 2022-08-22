@@ -28,9 +28,6 @@ LABEL org.opencontainers.image.authors       "https://github.com/Cyclenerd/googl
 LABEL org.opencontainers.image.documentation "https://github.com/Cyclenerd/google-monitoring-webhook-relay/blob/master/README.md"
 LABEL org.opencontainers.image.source        "https://github.com/Cyclenerd/google-monitoring-webhook-relay"
 
-# Disable any healthcheck inherited from the base image
-HEALTHCHECK NONE
-
 # Install base packages
 RUN set -eux; \
 	apt-get update -yqq; \
