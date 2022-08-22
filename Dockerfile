@@ -12,10 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM debian:bullseye-slim
+FROM ubuntu:22.04
 
 # Default to UTF-8 file.encoding
 ENV LANG C.UTF-8
+
+# Set debconf frontend to noninteractive
+ENV DEBIAN_FRONTEND noninteractive
 
 # Labels
 LABEL org.opencontainers.image.title         "Google Cloud Monitoring Alerting Webhook Relay"
@@ -24,6 +27,9 @@ LABEL org.opencontainers.image.url           "https://hub.docker.com/r/cyclenerd
 LABEL org.opencontainers.image.authors       "https://github.com/Cyclenerd/google-monitoring-webhook-relay/graphs/contributors"
 LABEL org.opencontainers.image.documentation "https://github.com/Cyclenerd/google-monitoring-webhook-relay/blob/master/README.md"
 LABEL org.opencontainers.image.source        "https://github.com/Cyclenerd/google-monitoring-webhook-relay"
+
+# Disable any healthcheck inherited from the base image
+HEALTHCHECK NONE
 
 # Install base packages
 RUN set -eux; \
