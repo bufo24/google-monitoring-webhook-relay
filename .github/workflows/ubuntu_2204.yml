@@ -1,4 +1,4 @@
-name: "Ubuntu 20.04 LTS"
+name: "Ubuntu 22.04 LTS"
 
 on:
   push:
@@ -10,8 +10,8 @@ on:
 
 jobs:
   ubuntu-2004:
-    name: Test Ubuntu 20.04 LTS
-    runs-on: ubuntu-20.04
+    name: Test Ubuntu 22.04 LTS
+    runs-on: ubuntu-22.04
     steps:
       - name: Install dependencies 🔧
         run: |

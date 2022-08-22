@@ -8,7 +8,7 @@ Available as [Docker image](https://hub.docker.com/repository/docker/cyclenerd/g
 
 Based on [Dancer](https://www.perldancer.org/) Perl web framework.
 
-[![Ubuntu 20.04 LTS](https://github.com/Cyclenerd/google-monitoring-webhook-relay/actions/workflows/ubuntu_2004.yml/badge.svg)](https://github.com/Cyclenerd/google-monitoring-webhook-relay/actions/workflows/ubuntu_2004.yml)
+[![Ubuntu 22.04 LTS](https://github.com/Cyclenerd/google-monitoring-webhook-relay/actions/workflows/ubuntu_2204.yml/badge.svg)](https://github.com/Cyclenerd/google-monitoring-webhook-relay/actions/workflows/ubuntu_2204.yml)
 [![Latest Docker images](https://github.com/Cyclenerd/google-monitoring-webhook-relay/actions/workflows/docker-latest.yml/badge.svg)](https://github.com/Cyclenerd/google-monitoring-webhook-relay/actions/workflows/docker-latest.yml)
 [![Docker Pulls](https://img.shields.io/docker/pulls/cyclenerd/google-monitoring-webhook-relay)](https://hub.docker.com/r/cyclenerd/google-monitoring-webhook-relay)
 [![GitHub](https://img.shields.io/github/license/cyclenerd/google-monitoring-webhook-relay)](https://github.com/Cyclenerd/google-monitoring-webhook-relay/blob/master/LICENSE)
