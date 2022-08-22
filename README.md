@@ -6,10 +6,10 @@ Get notified via Discord, Pushover, Sipgate SMS and Microsoft Teams message.
 
 Available as [Docker image](https://hub.docker.com/repository/docker/cyclenerd/google-monitoring-webhook-relay) for hosting using Kubernets, AWS, Azure or [Google Cloud Platform](https://github.com/Cyclenerd/google-monitoring-webhook-relay/tree/master/gcp_cloud_run).
 
-Based on [Dancer](https://www.perldancer.org/) Perl web framework.
+Based on [Dancer](https://www.perldancer.org/) Perl web framework and Ubuntu GNU/Linux 22.04 LTS (`ubuntu:22.04`).
 
 [![Ubuntu 22.04 LTS](https://github.com/Cyclenerd/google-monitoring-webhook-relay/actions/workflows/ubuntu_2204.yml/badge.svg)](https://github.com/Cyclenerd/google-monitoring-webhook-relay/actions/workflows/ubuntu_2204.yml)
-[![Latest Docker images](https://github.com/Cyclenerd/google-monitoring-webhook-relay/actions/workflows/docker-latest.yml/badge.svg)](https://github.com/Cyclenerd/google-monitoring-webhook-relay/actions/workflows/docker-latest.yml)
+[![Latest image](https://github.com/Cyclenerd/google-monitoring-webhook-relay/actions/workflows/docker-latest.yml/badge.svg)](https://github.com/Cyclenerd/google-monitoring-webhook-relay/actions/workflows/docker-latest.yml)
 [![Docker Pulls](https://img.shields.io/docker/pulls/cyclenerd/google-monitoring-webhook-relay)](https://hub.docker.com/r/cyclenerd/google-monitoring-webhook-relay)
 [![GitHub](https://img.shields.io/github/license/cyclenerd/google-monitoring-webhook-relay)](https://github.com/Cyclenerd/google-monitoring-webhook-relay/blob/master/LICENSE)
 
