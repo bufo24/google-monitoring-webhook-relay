@@ -71,7 +71,7 @@ jobs:
   docker-test:
     name: Test Docker image
     needs: [docker]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     services: # Define Docker containers to use for this job.
       http-server: # Container ID for our notify-me container
         image: ghcr.io/cyclenerd/google-monitoring-webhook-relay:test # Image to pull from GitHub Container registry
